@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_bg"
+    tools:context=".fragment.tasbehFragment">
+
+    <TextView
+        android:id="@+id/islamy_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/islamyWord"
+        android:textColor="#242424"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/head_sebha"
+        android:layout_width="wrap_content"
+        android:layout_height="105dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/head_sebha_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/islamy_word" />
+
+    <ImageView
+        android:id="@+id/body_sebha"
+        android:layout_width="wrap_content"
+        android:layout_height="234dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/body_sebha_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/head_sebha"
+        android:layout_marginTop="75dp"
+        />
+
+    <TextView
+        android:id="@+id/tesbeh_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/numoftasbehatWord"
+        android:textColor="#242424"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/body_sebha" />
+
+    <Button
+        android:id="@+id/numbers_btn"
+        android:layout_width="85dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@id/tesbeh_word"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#c9b496"
+        android:layout_marginTop="15dp"
+        tools:text="33"
+        android:textSize="18sp"
+        android:textColor="#817565"/>
+    <Button
+        android:id="@+id/tsbeh_btn"
+        android:layout_width="137dp"
+        android:layout_height="54dp"
+        app:layout_constraintTop_toBottomOf="@id/numbers_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#c9b496"
+        android:layout_marginTop="15dp"
+        tools:text="سبحان الله"
+        android:textSize="16sp"
+        android:clickable="false"
+        android:textColor="@color/white"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

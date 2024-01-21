@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/default_bg"
+    tools:context=".fragment.QuranFragment">
+
+   <TextView
+       android:id="@+id/islamytxt"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       android:layout_marginTop="30dp"
+       android:textStyle="bold"
+       android:textColor="@color/black"
+       android:textSize="30sp"
+       android:text="@string/islamyWord"/>
+    <ImageView
+        android:id="@+id/quranimage"
+        android:layout_width="205dp"
+        android:layout_height="227dp"
+        app:layout_constraintTop_toBottomOf="@id/islamytxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/qur2an_screen_logo"
+        android:contentDescription="@string/todo" />
+    <View
+        android:id="@+id/firsthorizontleline"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/quranimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#B7935F"
+        android:layout_marginTop="10dp"
+        />
+
+    <View
+        android:id="@+id/verticalline"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/firsthorizontleline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#B7935F"
+        android:layout_marginTop="10dp"
+        />
+    <View
+        android:id="@+id/secondhorizontleline"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/firsthorizontleline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#B7935F"
+        android:layout_marginTop="40dp"
+        />
+
+    <TextView
+        android:id="@+id/nameofsurahtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/firsthorizontleline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/verticalline"
+        app:layout_constraintBottom_toTopOf="@id/secondhorizontleline"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:text="@string/name_of_surah"
+        />
+
+    <TextView
+        android:id="@+id/numofayattxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/firsthorizontleline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/verticalline"
+        app:layout_constraintBottom_toTopOf="@id/secondhorizontleline"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:text="@string/number_of_ayat"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_items"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/secondhorizontleline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/name_and_ayat_items"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
