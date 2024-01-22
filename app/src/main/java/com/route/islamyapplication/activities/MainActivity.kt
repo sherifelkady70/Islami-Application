@@ -1,8 +1,9 @@
-package com.route.islamyapplication
+package com.route.islamyapplication.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.route.islamyapplication.R
 import com.route.islamyapplication.databinding.ActivityMainBinding
 import com.route.islamyapplication.fragment.AhadethFragment
 import com.route.islamyapplication.fragment.QuranFragment
@@ -17,19 +18,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        addQuranFragment()
         binding.navView.setOnItemSelectedListener {
-            if(it.itemId == R.id.quran_icon ){
+            if(it.itemId == R.id.quran_icon){
                 quran_Fragment()
-            }else if(it.itemId==R.id.sebha_icon){
+            }else if(it.itemId== R.id.sebha_icon){
                 tasbeh_Fragment()
-            }else if (it.itemId==R.id.hadeth_icon){
+            }else if (it.itemId== R.id.hadeth_icon){
                 ahadeth_Fragment()
             }
             return@setOnItemSelectedListener true
         }
     }
 
+    private fun addQuranFragment(){
+        addFragment(quranFragment)
+    }
     private fun tasbeh_Fragment(){
         replaceFragment(tasbehFragment)
     }
@@ -42,6 +46,11 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment : Fragment) {
         val transacrtion = supportFragmentManager.beginTransaction()
         transacrtion.replace(R.id.fragmentcontainer,fragment)
+        transacrtion.commit()
+    }
+    private fun addFragment(fragment : Fragment) {
+        val transacrtion = supportFragmentManager.beginTransaction()
+        transacrtion.add(R.id.fragmentcontainer,fragment)
         transacrtion.commit()
     }
 }

@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/verticalline"
         app:layout_constraintBottom_toTopOf="@id/secondhorizontleline"
-        android:textSize="26sp"
+        android:textSize="25sp"
         android:textColor="@color/black"
         android:text="@string/name_of_surah"
         />
@@ -85,7 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/verticalline"
         app:layout_constraintBottom_toTopOf="@id/secondhorizontleline"
-        android:textSize="26sp"
+        android:textSize="25sp"
         android:textColor="@color/black"
         android:text="@string/number_of_ayat"
         />

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">IslamyApplication</string>
     <string name="islamyWord">اسلامى</string>
@@ -7,7 +8,7 @@
     <string name="tasbehWord">تسبيح</string>
     <string name="hadethWord">حديث</string>
     <string name="quranWord">قران كريم</string>
-    <string name="name_of_surah">name of surah</string>
-    <string name="number_of_ayat">number of ayat</string>
+    <string name="number_of_ayat">عدد الآيات</string>
+    <string name="name_of_surah">اسم السورة</string>
     <string name="ahadethWord">الاحاديث</string>
 </resources>

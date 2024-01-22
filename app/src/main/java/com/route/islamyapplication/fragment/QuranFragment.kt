@@ -5,10 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.route.islamyapplication.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.route.islamyapplication.Constants
+import com.route.islamyapplication.adapters.QuranAdapter
+import com.route.islamyapplication.databinding.FragmentQuranBinding
 
 
 class QuranFragment : Fragment() {
+    lateinit var binding : FragmentQuranBinding
+    lateinit var quranAdapter: QuranAdapter
 
 
     override fun onCreateView(
@@ -16,12 +21,20 @@ class QuranFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quran, container, false)
+        binding = FragmentQuranBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        prapareRV()
 
+    }
+
+    private fun prapareRV(){
+        quranAdapter= QuranAdapter(Constants.NAMESANDNUMBEROFAYAT)
+        binding.rvItems.layoutManager=LinearLayoutManager(activity)
+        binding.rvItems.adapter=quranAdapter
     }
 }

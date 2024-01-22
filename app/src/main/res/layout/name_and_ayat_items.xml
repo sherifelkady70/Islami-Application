@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 
     <TextView
         android:id="@+id/namesofsurah"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/numofayat"
-        android:layout_marginTop="5dp"
-        android:textSize="20sp"
+        android:padding="3dp"
         android:textColor="@color/black"
-        tools:text="البقره"
-        />
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/numofayat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="البقره" />
 
     <TextView
         android:id="@+id/numofayat"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/namesofsurah"
-        android:layout_marginTop="5dp"
-        android:textSize="20sp"
+        android:padding="3dp"
         android:textColor="@color/black"
-        tools:text="286"
-        />
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/namesofsurah"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="286" />
 </androidx.constraintlayout.widget.ConstraintLayout>

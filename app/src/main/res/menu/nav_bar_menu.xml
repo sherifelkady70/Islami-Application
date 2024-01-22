@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/quran_icon"
+        android:icon="@drawable/icon_quran"
+        android:title="@string/quranWord"
+        />
 
-    <item
-        android:id="@+id/radio_icon"
-        android:icon="@drawable/icon_radio"
-        android:title="@string/radioWord" />
-    <item
-        android:id="@+id/sebha_icon"
-        android:icon="@drawable/icon_sebha"
-        android:title="@string/tasbehWord" />
     <item
         android:id="@+id/hadeth_icon"
         android:icon="@drawable/icon_hadeth"
         android:title="@string/hadethWord" />
+
     <item
-        android:id="@+id/quran_icon"
-        android:icon="@drawable/icon_quran"
-        android:title="@string/quranWord" />
+        android:id="@+id/sebha_icon"
+        android:icon="@drawable/icon_sebha"
+        android:title="@string/tasbehWord" />
+<!--
+    <item
+        android:id="@+id/radio_icon"
+        android:icon="@drawable/icon_radio"
+        android:title="@string/radioWord" />
+
+        -->
 </menu>

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.route.islamyapplication.activities.MainActivity
 
 class SplashAcivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class SplashAcivity : AppCompatActivity() {
     }
 
     private fun startMainActivity(){
-        val intent = Intent(this@SplashAcivity,MainActivity::class.java)
+        val intent = Intent(this@SplashAcivity, MainActivity::class.java)
         startActivity(intent)
         finish()
     }
