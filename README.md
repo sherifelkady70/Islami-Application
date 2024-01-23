@@ -7,3 +7,7 @@
 1- QuranFragment to display list of names of quran's surah and number of Ayat
 2- HadethFragment to display list of prophetic talks
 3- tasbehFragment to dislay sebha and counter to count number of praise 
+
+
+
+![Splash Screen Photo]([URL](https://github.com/sherifelkady70/Islami-Application/blob/master/SplashScreenInIslamiApp.jpg)https://github.com/sherifelkady70/Islami-Application/blob/master/SplashScreenInIslamiApp.jpg)
