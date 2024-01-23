@@ -4,6 +4,8 @@ object Constants {
     val SOBHANAALLA :String= "سبحان الله"
     val ELHAMDLLALLA :String= "الحمد لله"
     val ALLAHAKBER :String= "الله اكبر"
+    val NAMEKEY="NAMEKEY"
+    val NAMEOFFILEKEY = "FILEKEY"
 
     val NAMESANDNUMBEROFAYAT =  mutableListOf<SurahandAyat>(
          SurahandAyat("الفاتحه",7)
@@ -95,6 +97,7 @@ object Constants {
         ,SurahandAyat("الأعلى",19)
         ,SurahandAyat("الغاشية",26)
         ,SurahandAyat("الفجر",30)
+        ,SurahandAyat("البلد",20)
         ,SurahandAyat("الشمس",15)
         ,SurahandAyat("الليل",21)
         ,SurahandAyat("الضحى",11)

@@ -1,9 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/default_bg"
     tools:context=".activities.QuranDetails">
 
+    <TextView
+        android:id="@+id/islamytxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:text="@string/islamyWord"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consLayout"
+        android:layout_width="354dp"
+        android:layout_height="552dp"
+        app:layout_constraintTop_toBottomOf="@id/islamytxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#F8F8F8"
+        android:layout_marginTop="70dp"
+        />
+
+    <TextView
+        android:id="@+id/nameOfSurahtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/consLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        tools:text="سوره البقره"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:padding="2dp"
+        />
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="320dp"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/nameOfSurahtxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#B7935F"/>
+<ScrollView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintTop_toBottomOf="@id/lineView"
+    app:layout_constraintEnd_toEndOf="@id/consLayout"
+    app:layout_constraintStart_toStartOf="@id/consLayout"
+    app:layout_constraintBottom_toBottomOf="parent"
+   >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+    <TextView
+        android:id="@+id/contentSurah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="25sp"
+        android:textColor="#242424"
+        android:padding="3dp"
+        android:layoutDirection="rtl"
+        android:textAlignment="textStart"
+        tools:text="عن أمـيـر المؤمنـين أبي حـفص عمر بن الخطاب
+رضي الله عنه ، قال : سمعت رسول الله صلى الله
+عـليه وسلم يـقـول : ( إنـما الأعـمـال بالنيات وإنـمـا
+لكـل امـرئ ما نـوى . فمن كـانت هجرته إلى الله
+ورسولـه فهجرتـه إلى الله ورسـوله ومن كانت
+هجرته لـدنيا يصـيبها أو امرأة ينكحها فهجرته إلى
+ما هاجر إليه ).
+رواه إمام المحد ثين أبـو عـبـد الله محمد بن إسماعـيل
+بن ابراهـيـم بن المغـيره بن بـرد زبه البخاري
+الجعـفي،[رقم:1] وابـو الحسـيـن مسلم بن الحجاج بن
+مـسلم القـشـيري الـنيسـابـوري [رقم :1907] رضي الله
+عنهما في صحيحيهما اللذين هما أصح الكتب
+المصنفه.
+"
+        />
+    </LinearLayout>
+</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

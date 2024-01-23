@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">IslamyApplication</string>
-    <string name="islamyWord">اسلامى</string>
+    <string name="islamyWord">إسلامي</string>
     <string name="todo">TODO</string>
     <string name="numoftasbehatWord">عدد التسبيحات</string>
     <string name="radioWord">راديو</string>
-    <string name="tasbehWord">تسبيح</string>
+    <string name="tasbehWord">سبحة</string>
     <string name="hadethWord">حديث</string>
     <string name="quranWord">قران كريم</string>
     <string name="number_of_ayat">عدد الآيات</string>
     <string name="name_of_surah">اسم السورة</string>
     <string name="ahadethWord">الاحاديث</string>
+    <string name="buttontsbeh">اضغط هنا</string>
 </resources>
