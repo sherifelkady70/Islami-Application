@@ -11,5 +11,6 @@
 
 
 ![Splash Screen Photo](SplashScreenInIslamiApp.jpg)
+<img src="SplashScreenInIslamiApp.jpg" alt="Splash Screen Photo" width="200" height="200">
 ![Quran Fragment Photo](QuranFragmentInIslamiApp.jpg)
 ![Sebha Fragment Photo](TsbehFragmentInIslamiApp.jpg)
