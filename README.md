@@ -10,5 +10,6 @@
 
 
 
-![Splash Screen Photo]([URL](https://github.com/sherifelkady70/Islami-Application/blob/master/SplashScreenInIslamiApp.jpg)https://github.com/sherifelkady70/Islami-Application/blob/master/SplashScreenInIslamiApp.jpg)
+![Splash Screen Photo](SplashScreenInIslamiApp.jpg)
+![Quran Fragment Photo](QuranFragmentInIslamiApp.jpg)
 ![Sebha Fragment Photo](TsbehFragmentInIslamiApp.jpg)
