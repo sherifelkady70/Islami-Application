@@ -74,7 +74,7 @@
         android:textColor="#242424"
         android:padding="3dp"
         android:layoutDirection="rtl"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         tools:text="عن أمـيـر المؤمنـين أبي حـفص عمر بن الخطاب
 رضي الله عنه ، قال : سمعت رسول الله صلى الله
 عـليه وسلم يـقـول : ( إنـما الأعـمـال بالنيات وإنـمـا

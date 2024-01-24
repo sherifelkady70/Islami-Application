@@ -27,7 +27,7 @@ class QuranDetails : AppCompatActivity() {
     }
 
     private fun readFromFile() : String{
-        var fileString = " sssss"
+        var fileString = " "
         try  {
         val inputStream = assets.open(file)
         val reader = BufferedReader(InputStreamReader(inputStream))
@@ -36,7 +36,7 @@ class QuranDetails : AppCompatActivity() {
             val index = fileLines.indexOf(line) +1
             return@joinToString line+" (${index}) "
         }
-            Log.d("readFromFile","${fileString}")
+            Log.d("readFromFile", fileString)
             inputStream.close()
         } catch (e:Exception){
             e.printStackTrace()
