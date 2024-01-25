@@ -3,9 +3,10 @@ package com.route.islamyapplication.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.route.islamyapplication.models.HadethModel
 import com.route.islamyapplication.databinding.NameOfHadethItemsBinding
 
-class HadethAdapter(val myList : List<String>) : RecyclerView.Adapter<HadethAdapter.ViewHolder>(){
+class HadethAdapter(val myList : MutableList<HadethModel>) : RecyclerView.Adapter<HadethAdapter.ViewHolder>(){
 
     class ViewHolder(val binding : NameOfHadethItemsBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -19,8 +20,8 @@ class HadethAdapter(val myList : List<String>) : RecyclerView.Adapter<HadethAdap
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val data : String = myList[position]
-        holder.binding.nameofhadeth.text = data
+        val data : HadethModel = myList[position]
+        holder.binding.nameofhadeth.text = data.title
         if(onHadethClick!=null) {
             holder.itemView.setOnClickListener {
                 onHadethClick!!.onItemClick(data,position)
@@ -28,7 +29,7 @@ class HadethAdapter(val myList : List<String>) : RecyclerView.Adapter<HadethAdap
         }
     }
     var onHadethClick : onItemClickListener?=null
-    interface onItemClickListener{
-        fun onItemClick(nameOfHadeth : String , position: Int )
+    interface onItemClickListener {
+        fun onItemClick(nameOfHadeth : HadethModel, position: Int )
     }
 }

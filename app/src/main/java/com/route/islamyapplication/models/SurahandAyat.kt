@@ -1,4 +1,4 @@
-package com.route.islamyapplication
+package com.route.islamyapplication.models
 
 data class SurahandAyat(
     val name:String,

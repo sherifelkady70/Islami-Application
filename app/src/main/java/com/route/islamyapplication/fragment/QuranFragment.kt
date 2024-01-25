@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.route.islamyapplication.Constants
-import com.route.islamyapplication.SurahandAyat
+import com.route.islamyapplication.models.SurahandAyat
 import com.route.islamyapplication.activities.QuranDetails
 import com.route.islamyapplication.adapters.QuranAdapter
 import com.route.islamyapplication.databinding.FragmentQuranBinding

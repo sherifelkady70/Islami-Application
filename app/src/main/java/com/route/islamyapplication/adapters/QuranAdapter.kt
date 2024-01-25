@@ -2,9 +2,8 @@ package com.route.islamyapplication.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
-import com.route.islamyapplication.SurahandAyat
+import com.route.islamyapplication.models.SurahandAyat
 import com.route.islamyapplication.databinding.NameAndAyatItemsBinding
 
 class QuranAdapter (var myList : MutableList<SurahandAyat>) : RecyclerView.Adapter<QuranAdapter.ViewHolder>(){
