@@ -7,11 +7,11 @@ import com.route.islamyapplication.R
 import com.route.islamyapplication.databinding.ActivityMainBinding
 import com.route.islamyapplication.fragment.AhadethFragment
 import com.route.islamyapplication.fragment.QuranFragment
-import com.route.islamyapplication.fragment.tasbehFragment
+import com.route.islamyapplication.fragment.SebhaFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
-    val tasbehFragment = tasbehFragment()
+    val SebhaFragment = SebhaFragment()
     val quranFragment = QuranFragment()
     val hadethFragment = AhadethFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         addFragment(quranFragment)
     }
     private fun tasbeh_Fragment(){
-        replaceFragment(tasbehFragment)
+        replaceFragment(SebhaFragment)
     }
     private fun quran_Fragment(){
         replaceFragment(quranFragment)

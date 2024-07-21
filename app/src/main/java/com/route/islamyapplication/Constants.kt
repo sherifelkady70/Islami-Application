@@ -126,9 +126,5 @@ object Constants {
         , SurahandAyat("الإخلاص",4)
         , SurahandAyat("الفلق",5)
         , SurahandAyat("الناس",6)
-
-
-
-
     )
 }

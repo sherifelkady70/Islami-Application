@@ -19,7 +19,7 @@
             android:name=".activities.QuranDetails"
             android:exported="false" />
         <activity
-            android:name=".SplashAcivity"
+            android:name=".activities.SplashAcivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
