@@ -3,6 +3,7 @@ package com.route.islamyapplication.radio
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,10 +18,8 @@ class RadioFragment : Fragment() {
     private lateinit var binding : FragmentRadioBinding
     private lateinit var mediaPlayer : MediaPlayer
     private  var isMediaPlayerAvailable = false
-    lateinit var viewModel : RadioViewModel
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var viewModel : RadioViewModel
+    private var singleURI = " "
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,14 +27,13 @@ class RadioFragment : Fragment() {
     ): View? {
         inflater.inflate(R.layout.fragment_radio, container, false)
         binding = FragmentRadioBinding.inflate(inflater)
-        viewModel = ViewModelProvider(this)[RadioViewModel::class.java]
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initAudioPlayer()
-
+        //initAudioPlayer()
+        initViewModel()
         binding.play.setOnClickListener {
             if (isMediaPlayerAvailable) mediaPlayer.start()
             else Toast.makeText(
@@ -45,21 +43,41 @@ class RadioFragment : Fragment() {
         }
     }
 
-    private fun initAudioPlayer() {
-        val url = "http://........"
-        mediaPlayer = MediaPlayer().apply {
-            setAudioAttributes(
-                AudioAttributes.Builder()
-                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                    .setUsage(AudioAttributes.USAGE_MEDIA)
-                    .build()
-            )
-            setDataSource(url)
-            prepareAsync()
-            setOnPreparedListener {
-                isMediaPlayerAvailable = true
+    fun initViewModel(){
+        viewModel = ViewModelProvider(this)[RadioViewModel::class.java]
+        viewModel.loadRadios()
+        viewModel.listOfRadio.observe(viewLifecycleOwner){
+            mediaPlayer = MediaPlayer().apply {
+                setAudioAttributes(
+                    AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .build()
+                )
+                setDataSource(it?.get(0)?.url)
+                Log.d("in radio fragment", singleURI)
+                prepareAsync()
+                setOnPreparedListener {
+                    isMediaPlayerAvailable = true
+                }
             }
         }
     }
+//    private fun initAudioPlayer() {
+//        mediaPlayer = MediaPlayer().apply {
+//            setAudioAttributes(
+//                AudioAttributes.Builder()
+//                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+//                    .setUsage(AudioAttributes.USAGE_MEDIA)
+//                    .build()
+//            )
+//            setDataSource(singleURI)
+//            Log.d("in radio fragment", singleURI)
+//            prepareAsync()
+//            setOnPreparedListener {
+//                isMediaPlayerAvailable = true
+//            }
+//        }
+//    }
 
 }

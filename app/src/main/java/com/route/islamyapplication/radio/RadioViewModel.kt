@@ -1,5 +1,6 @@
 package com.route.islamyapplication.radio
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,7 +13,13 @@ class RadioViewModel :ViewModel() {
 
     fun loadRadios() {
         viewModelScope.launch{
-            listOfRadio.value = RetrofitObject.getRetrofitInstance().getRadios().radios
+            try{
+                val response = RetrofitObject.getRetrofitInstance().getRadios()
+                listOfRadio.value = response.radios
+                Log.d("in view model", "${RetrofitObject.getRetrofitInstance().getRadios().radios}")
+            }catch (e:Exception){
+                Log.d("in view model", "exception")
+            }
         }
     }
 }
