@@ -1,8 +1,11 @@
 package com.route.islamyapplication.radio.api.models
 
+import com.google.gson.annotations.SerializedName
+
 data class Radio(
     val id: Int,
     val name: String,
-    val recent_date: String,
+    @SerializedName("recent_date")
+    val recentDate: String,
     val url: String
 )
