@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/default_bg"
+
     tools:context=".fragment.QuranFragment">
 
    <TextView
@@ -15,10 +15,10 @@
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        android:layout_marginTop="30dp"
+       android:textSize="50dp"
        android:textStyle="bold"
-       android:textColor="@color/black"
-       android:textSize="30sp"
-       android:text="@string/islamyWord"/>
+       android:textColor="#b7935f"
+       android:text="My Islam"/>
     <ImageView
         android:id="@+id/quranimage"
         android:layout_width="205dp"

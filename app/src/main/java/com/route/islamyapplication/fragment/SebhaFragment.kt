@@ -10,7 +10,7 @@ import com.route.islamyapplication.databinding.FragmentTasbehBinding
 import kotlin.properties.Delegates
 
 
-class tasbehFragment : Fragment() {
+class SebhaFragment : Fragment() {
     private var displayCounter by Delegates.notNull<Int>()
     private lateinit var binding : FragmentTasbehBinding
     private var currentRotate =0f

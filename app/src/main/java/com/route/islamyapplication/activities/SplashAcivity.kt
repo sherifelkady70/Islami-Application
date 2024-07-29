@@ -1,10 +1,10 @@
-package com.route.islamyapplication
+package com.route.islamyapplication.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.route.islamyapplication.activities.MainActivity
+import com.route.islamyapplication.R
 
 class SplashAcivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

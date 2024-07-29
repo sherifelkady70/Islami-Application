@@ -15,11 +15,10 @@
         android:id="@+id/sebha_icon"
         android:icon="@drawable/icon_sebha"
         android:title="@string/tasbehWord" />
-<!--
+
     <item
         android:id="@+id/radio_icon"
         android:icon="@drawable/icon_radio"
         android:title="@string/radioWord" />
 
-        -->
 </menu>

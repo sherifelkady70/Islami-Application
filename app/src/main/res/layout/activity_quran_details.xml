@@ -5,21 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/default_bg"
+    android:background="@drawable/islamybackground"
     tools:context=".activities.QuranDetails">
 
     <TextView
         android:id="@+id/islamytxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="50dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:text="@string/islamyWord"/>
+        android:textColor="#b7935f"
+        android:text="My Islam"
+        android:layout_marginTop="30dp"
+        />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/consLayout"
