@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import com.route.islamyapplication.R
 import com.route.islamyapplication.databinding.FragmentRadioBinding
@@ -35,49 +36,39 @@ class RadioFragment : Fragment() {
         //initAudioPlayer()
         initViewModel()
         binding.play.setOnClickListener {
-            if (isMediaPlayerAvailable) mediaPlayer.start()
+            if (isMediaPlayerAvailable) {
+                mediaPlayer.start()
+                binding.play.isVisible = false
+            }
             else Toast.makeText(
                 requireContext(), "Media is still un Available...please wait",
                 Toast.LENGTH_SHORT
             ).show()
         }
     }
-
-    fun initViewModel(){
+    private fun initViewModel(){
         viewModel = ViewModelProvider(this)[RadioViewModel::class.java]
         viewModel.loadRadios()
         viewModel.listOfRadio.observe(viewLifecycleOwner){
-            mediaPlayer = MediaPlayer().apply {
-                setAudioAttributes(
-                    AudioAttributes.Builder()
-                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                        .setUsage(AudioAttributes.USAGE_MEDIA)
-                        .build()
-                )
-                setDataSource(it?.get(0)?.url)
-                Log.d("in radio fragment", singleURI)
-                prepareAsync()
-                setOnPreparedListener {
-                    isMediaPlayerAvailable = true
-                }
+            it?.let {
+                initAudioPlayer(it[0].url)
+            }
+        }
+        }
+    private fun initAudioPlayer(url : String) {
+        mediaPlayer = MediaPlayer().apply {
+            setAudioAttributes(
+                AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .build()
+            )
+            setDataSource(url)
+            Log.d("in radio fragment", url)
+            prepareAsync()
+            setOnPreparedListener {
+                isMediaPlayerAvailable = true
             }
         }
     }
-//    private fun initAudioPlayer() {
-//        mediaPlayer = MediaPlayer().apply {
-//            setAudioAttributes(
-//                AudioAttributes.Builder()
-//                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-//                    .setUsage(AudioAttributes.USAGE_MEDIA)
-//                    .build()
-//            )
-//            setDataSource(singleURI)
-//            Log.d("in radio fragment", singleURI)
-//            prepareAsync()
-//            setOnPreparedListener {
-//                isMediaPlayerAvailable = true
-//            }
-//        }
-//    }
-
 }
