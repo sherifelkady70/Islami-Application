@@ -7,12 +7,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.route.islamyapplication.R
 import com.route.islamyapplication.databinding.FragmentRadioBinding
 
 class RadioFragment : Fragment() {
 
-    lateinit var binding : FragmentRadioBinding
+    private lateinit var binding : FragmentRadioBinding
+    private lateinit var mediaPlayer : MediaPlayer
+    private  var isMediaPlayerAvaliable = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -29,11 +32,17 @@ class RadioFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAudioPlayer()
+
+        binding.play.setOnClickListener {
+            if(isMediaPlayerAvaliable) mediaPlayer.start()
+            else Toast.makeText(requireContext() , "Media is still un Available...please wait",
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initAudioPlayer() {
-        val url = "http://........" // your URL here
-        val mediaPlayer = MediaPlayer().apply {
+        val url = "http://........"
+        mediaPlayer = MediaPlayer().apply {
             setAudioAttributes(
                 AudioAttributes.Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
@@ -41,8 +50,10 @@ class RadioFragment : Fragment() {
                     .build()
             )
             setDataSource(url)
-            prepare() // might take long! (for buffering, etc)
-            start()
+            prepareAsync()
+            setOnPreparedListener {
+                isMediaPlayerAvaliable = true
+            }
         }
     }
 
