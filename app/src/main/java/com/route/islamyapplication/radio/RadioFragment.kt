@@ -19,7 +19,8 @@ class RadioFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = FragmentRadioBinding.inflate(layoutInflater)
+        inflater.inflate(R.layout.fragment_radio, container, false)
+        binding = FragmentRadioBinding.inflate(inflater)
         return binding.root
     }
 

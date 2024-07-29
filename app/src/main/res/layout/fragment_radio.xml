@@ -37,7 +37,7 @@
         android:src="@drawable/qurankareem"/>
 
     <ImageView
-        android:id="@+id/next_radio_image"
+        android:id="@+id/next_play"
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintTop_toBottomOf="@id/quran_kareem"
@@ -47,7 +47,7 @@
         android:src="@drawable/baseline_skip_next_24"/>
 
     <ImageView
-        android:id="@+id/pre_radio_image"
+        android:id="@+id/pre_play"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="100dp"
@@ -57,11 +57,11 @@
         android:src="@drawable/baseline_skip_previous_24"/>
 
     <ImageView
-        android:id="@+id/pre_radio_image"
+        android:id="@+id/play"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintStart_toEndOf="@id/pre_radio_image"
-        app:layout_constraintEnd_toStartOf="@id/next_radio_image"
+        app:layout_constraintStart_toEndOf="@id/play"
+        app:layout_constraintEnd_toStartOf="@id/next_play"
         app:layout_constraintTop_toBottomOf="@id/quran_kareem"
         android:src="@drawable/baseline_arrow_right_24"
         android:layout_marginTop="15dp"
