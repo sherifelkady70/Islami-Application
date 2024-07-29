@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.route.islamyapplication.R
 import com.route.islamyapplication.databinding.FragmentRadioBinding
 
@@ -15,7 +16,8 @@ class RadioFragment : Fragment() {
 
     private lateinit var binding : FragmentRadioBinding
     private lateinit var mediaPlayer : MediaPlayer
-    private  var isMediaPlayerAvaliable = false
+    private  var isMediaPlayerAvailable = false
+    lateinit var viewModel : RadioViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -26,6 +28,7 @@ class RadioFragment : Fragment() {
     ): View? {
         inflater.inflate(R.layout.fragment_radio, container, false)
         binding = FragmentRadioBinding.inflate(inflater)
+        viewModel = ViewModelProvider(this)[RadioViewModel::class.java]
         return binding.root
     }
 
@@ -34,9 +37,11 @@ class RadioFragment : Fragment() {
         initAudioPlayer()
 
         binding.play.setOnClickListener {
-            if(isMediaPlayerAvaliable) mediaPlayer.start()
-            else Toast.makeText(requireContext() , "Media is still un Available...please wait",
-                Toast.LENGTH_SHORT).show()
+            if (isMediaPlayerAvailable) mediaPlayer.start()
+            else Toast.makeText(
+                requireContext(), "Media is still un Available...please wait",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -52,7 +57,7 @@ class RadioFragment : Fragment() {
             setDataSource(url)
             prepareAsync()
             setOnPreparedListener {
-                isMediaPlayerAvaliable = true
+                isMediaPlayerAvailable = true
             }
         }
     }
